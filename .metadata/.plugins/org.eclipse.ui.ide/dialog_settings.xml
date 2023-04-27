@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="/home/thomasgeorgakis/Desktop/Repository"/>
+		<item value="/home/thomasgeorgakis/Desktop/Repository/FlyAwayPhase2Project"/>
+		<item value="/home/thomasgeorgakis/Desktop/Repository/ShubhamKumar_Phase2_NishaWaikar"/>
+	</list>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="615" key="DIALOG_X_ORIGIN"/>
+		<item value="120" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

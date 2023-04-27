@@ -43,7 +43,7 @@ public class Login extends HttpServlet {
 				HttpSession oldSession = request.getSession(false);
 				HttpSession newSession = null;
 				if (oldSession != null) {
-					Enumeration keys = oldSession.getAttributeNames();
+					Enumeration<String> keys = oldSession.getAttributeNames();
 					while(keys.hasMoreElements()) {
 						String key = (String)keys.nextElement();
 						map.put(key, oldSession.getAttribute(key));
@@ -55,7 +55,7 @@ public class Login extends HttpServlet {
 					for(Map.Entry<String , Object> m : map.entrySet()) {
 
 						newSession.setAttribute((String)m.getKey(), m.getValue());
-						map.remove(m);
+						map.remove(m.getValue());
 					}
 
 

@@ -25,10 +25,6 @@
 	rel="stylesheet">
 <link rel="icon" href="images/header-logo.png">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/login.css">
-
 <title>Fly Away</title>
 
 </head>
@@ -41,10 +37,6 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<a class="navbar-brand" href="admindetails.jsp"><i
 				class="fas fa-plane pr-2 fa-2x text-primary"></i></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarResponsive">
-				<span class="navbar-toggler-icon"></span>
-			</button>
 
 			<div class="collapse navbar-collapse " id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
@@ -53,8 +45,7 @@
 					<li class="nav-item"><a href="adminupdatepassword.jsp"
 						class="nav-link">Change Password</a></li>
 					<li class="nav-item"><a
-						class="text-uppercase text-center p-1 nav-link" href="Logout"><i
-							class="fas fa-sign-out-alt fa-2x pr-1 "></i> logout</a></li>
+						class="nav-link" href="Logout">Logout</a></li>
 				</ul>
 
 			</div>
@@ -221,30 +212,7 @@
 		</div>
 
 	</section>
-	<!-- Footer -->
-	<footer>
-		<div class="row justify-content-center">
-			<div class="col-md-5 text-center">
-				<i class="fas fa-plane pr-2 fa-4x text-primary"></i>
-				<p>Here at Fly Away we provide flights at the cheapest rate to
-					help you reach your destination</p>
-				<strong>Contact Info</strong>
-				<p>
-					<i class="fas fa-phone-square pr-2 fa-2x text-success"></i>{888}
-					888-8888
-				</p>
-				<p>
-					<i class="fas fa-envelope-open-text pr-2 fa-2x text-success"></i>support@flyaway.com
-				</p>
-
-			</div>
-
-			<hr class="socket">
-			<p>&copy; FlyAway, All Rights Reserved</p>
-		</div>
-	</footer>
-
-
+	
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 

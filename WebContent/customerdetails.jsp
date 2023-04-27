@@ -24,10 +24,6 @@
 	rel="stylesheet">
 <link rel="icon" href="images/header-logo.png">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/login.css">
-
 <title>Fly Away</title>
 
 </head>
@@ -52,8 +48,7 @@
 					<li class="nav-item"><a href="changepassword.jsp"
 						class="nav-link">Change Password</a></li>
 					<li class="nav-item"><a
-						class="text-uppercase text-center p-1 nav-link" href="Logout"><i
-							class="fas fa-sign-out-alt fa-2x pr-1 "></i> logout</a></li>
+						class="nav-link" href="Logout">Logout</a></li>
 				</ul>
 
 			</div>
@@ -72,7 +67,6 @@
 	Integer customerId = (Integer)session.getAttribute("customerId");
 	if(customerId != null){
 		reservationList = cust.showReservations(customerId);
-		System.out.println(reservationList.size());
 	}
 %>
 
@@ -181,44 +175,6 @@
 		</div>
 
 	</section>
-	<!-- Footer -->
-	<footer>
-		<div class="row justify-content-center">
-			<div class="col-md-5 text-center">
-				<i class="fas fa-plane pr-2 fa-4x text-primary"></i>
-				<p>Here at Fly Away we provide flights at the cheapest rate to
-					help you reach your destination</p>
-				<strong>Contact Info</strong>
-				<p>
-					<i class="fas fa-phone-square pr-2 fa-2x text-success"></i>{888}
-					888-8888
-				</p>
-				<p>
-					<i class="fas fa-envelope-open-text pr-2 fa-2x text-success"></i>support@flyaway.com
-				</p>
-
-			</div>
-
-			<hr class="socket">
-			<p>&copy; FlyAway, All Rights Reserved</p>
-		</div>
-	</footer>
-
-
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"></script>
-
 </body>
 </html>
 <% } %>

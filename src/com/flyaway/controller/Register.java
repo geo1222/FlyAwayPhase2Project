@@ -32,7 +32,7 @@ public class Register extends HttpServlet {
 		HttpSession oldSession = request.getSession(false);
 		HttpSession newSession = null;
 		if (oldSession != null) {
-			Enumeration keys = oldSession.getAttributeNames();
+			Enumeration<String> keys = oldSession.getAttributeNames();
 			while(keys.hasMoreElements()) {
 				String key = (String)keys.nextElement();
 				map.put(key, oldSession.getAttribute(key));
@@ -44,7 +44,7 @@ public class Register extends HttpServlet {
 			for(Map.Entry<String , Object> m : map.entrySet()) {
 
 				newSession.setAttribute((String)m.getKey(), m.getValue());
-				map.remove(m);
+				map.remove(m.getValue());
 			}
 
 		}else if(oldSession == null)  {
@@ -69,7 +69,6 @@ public class Register extends HttpServlet {
 			customer.setPassword(password);
 			customer.setPhone(phone);
 			customerId = cust.addCustomer(customer);
-			System.out.println(customerId);
 
 			if(customerId != 0) {
 				newSession.setAttribute("customerId", customerId);

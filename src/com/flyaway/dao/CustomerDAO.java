@@ -39,8 +39,6 @@ public class CustomerDAO {
 			pst.setString(4, custBean.getPassword());
 			pst.setString(5, custBean.getPhone());
 
-
-
 			if(pst.executeUpdate() == 1) {
 				ResultSet rs = pst.getGeneratedKeys();
 				if(rs.next()) {
@@ -166,8 +164,8 @@ public class CustomerDAO {
 	public int addReservation(Reservation resBean) {
 
 		int bookingId = 0;
-		String sql = "insert into reservations (flight_number,class,travel_date,"
-				+ "no_of_passengers,total_fare,customer_id) values(?,?,?,?,?,?)";
+		String sql = "insert into reservations (flight_number,travel_class,travel_date,"
+				+ "passengers,total_fare,customer_id) values(?,?,?,?,?,?)";
 
 
 		try {
@@ -179,7 +177,6 @@ public class CustomerDAO {
 			pst.setInt(4, resBean.getPassengers());
 			pst.setDouble(5, resBean.getTotalFare());
 			pst.setInt(6, resBean.getCustomerId());
-
 			if (pst.executeUpdate() == 1) {
 				ResultSet rs = pst.getGeneratedKeys();
 				if(rs.next()) {
@@ -209,8 +206,8 @@ public class CustomerDAO {
 	public List<Reservation> showReservations(int customerId) {
 
 		List<Reservation> lrev = new ArrayList<>();
-		String sql = "select r.booking_id, r.flight_number, r.class, r.travel_date,"
-				+ " r.no_of_passengers , r.total_fare , r.customer_id from "
+		String sql = "select r.booking_id, r.flight_number, r.travel_class, r.travel_date,"
+				+ " r.passengers , r.total_fare , r.customer_id from "
 				+ " reservations r where r.customer_id = ? ";
 
 
@@ -254,8 +251,8 @@ public class CustomerDAO {
 	public Reservation getReservation(int bookingId ) {
 
 		Reservation reservation = new Reservation();
-		String sql = "select r.booking_id, r.flight_number, r.class, r.travel_date,"
-				+ " r.no_of_passengers , r.total_fare , r.customer_id from "
+		String sql = "select r.booking_id, r.flight_number, r.travel_class, r.travel_date,"
+				+ " r.passengers , r.total_fare , r.customer_id from "
 				+ " reservations r where r.booking_id = ? ";
 
 
@@ -343,7 +340,7 @@ public class CustomerDAO {
 	public List<Flight>flightList(String src, String dest , Date travelDate){
 
 		List<Flight> flightList = new ArrayList<Flight>();
-		SimpleDateFormat sdf = new SimpleDateFormat("E");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
 		String day = sdf.format(travelDate);
 
 		String sql = "select f.flight_number , f.airline , f.weekdays , f.src_airport_code , "
@@ -363,7 +360,6 @@ public class CustomerDAO {
 			ResultSet rs = pst.executeQuery();
 
 			while(rs.next()) {
-
 				Flight flight = new Flight();
 				flight.setFlightNumber(rs.getInt(1));
 				flight.setAirline(rs.getString(2));
@@ -385,7 +381,6 @@ public class CustomerDAO {
 			}
 
 		}
-
 		return flightList;
 
 	}
@@ -641,10 +636,11 @@ public class CustomerDAO {
 
 	public Date getDate(String date) {
 
+		SimpleDateFormat dt = new SimpleDateFormat("yyyy-mm-dd");
 		Date theDate = new Date();
 
 		try {
-			theDate = DateUtils.parseDate(date);
+			theDate = dt.parse(date);
 
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -729,7 +725,7 @@ public class CustomerDAO {
 
 	public List<String> listAirline(){
 		List<String> airList = new ArrayList<>();
-		String sql = "select * from airline";
+		String sql = "select distinct airline from flight";
 
 
 		try {

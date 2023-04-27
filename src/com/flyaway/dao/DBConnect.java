@@ -9,10 +9,10 @@ public class DBConnect {
 	public static Connection getConnection() throws SQLException {
 
 		Connection con = null;
-		String jdbcUrl = "jdbc:mysql://localhost:3306/flight_reservation_tracker?useSSL=false";
+		String jdbcUrl = "jdbc:mysql://localhost:3306/flight_reservation_db?useSSL=false";
 		String driver = "com.mysql.cj.jdbc.Driver";
-		String user = "flyaway";
-		String password = "flyaway";
+		String user = "root";
+		String password = "Simplilearn";
 
 
 		try

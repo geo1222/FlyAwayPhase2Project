@@ -53,8 +53,6 @@ public class ShowFlight extends HttpServlet {
 			session.setAttribute("passengers", passengers);
 			session.setAttribute("day", day);
 
-
-
 			if(flightList.size() == 0 || flightList == null) {
 				request.setAttribute("FAIL", "There are no flights flying from " + srcAirport.getAirport() + " to " + destAirport.getAirport() + " on date " + date + " ." );
 				RequestDispatcher rd = getServletContext().getRequestDispatcher("/bookflight.jsp");

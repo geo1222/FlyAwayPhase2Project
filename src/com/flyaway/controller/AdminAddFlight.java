@@ -42,7 +42,7 @@ public class AdminAddFlight extends HttpServlet {
 			flight.setWeekdays(weekdays);
 			flight.setSource(source);
 			flight.setDestination(destination);
-			flightNumber = admin.addFlight(flight); 
+			flightNumber = admin.addFlight(flight);
 
 			if(flightNumber != 0) {
 				request.setAttribute("SUCCESS", "Flight successfully added");

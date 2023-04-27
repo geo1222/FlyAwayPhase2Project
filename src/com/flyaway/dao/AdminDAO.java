@@ -21,8 +21,6 @@ public class AdminDAO {
 		String sql = "insert into flight (airline , weekdays , src_airport_code , dest_airport_code) "
 				+ " values(? , ? ,? , ?)";
 
-
-
 		try {
 			con = DBConnect.getConnection();
 			pst = con.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS);
@@ -30,7 +28,6 @@ public class AdminDAO {
 			pst.setString(2, flight.getWeekdays());
 			pst.setString(3, flight.getSource());
 			pst.setString(4, flight.getDestination());
-
 			if (pst.executeUpdate() == 1) {
 				ResultSet rs = pst.getGeneratedKeys();
 				if(rs.next()) {
